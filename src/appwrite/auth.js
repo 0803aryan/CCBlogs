@@ -24,7 +24,6 @@ export class AuthService {
         password,
         name
       );
-      console.log(userAccount);
       if (userAccount) {
         // call another method like msg that account created successfully and then directly login and redirect to loggedIn homepage
         console.log(
@@ -49,6 +48,7 @@ export class AuthService {
 
   async getCurrentUser() {
     try {
+      const session = await this.account.get();
       return await this.account.get();
     } catch (error) {
       console.log("Appwrite serive :: getCurrentUser :: error", error);
