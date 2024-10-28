@@ -37,7 +37,10 @@ export class BucketService {
     }
   }
 
-  getFilePreview(fileId) {
+  getImagePreview(fileId) {
+    const url = this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
+    console.log(url);
+    console.log(url.href);
     return this.bucket.getFilePreview(conf.appwriteBucketId, fileId);
   }
 }

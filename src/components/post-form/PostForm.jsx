@@ -119,7 +119,7 @@ const PostForm = ({ post }) => {
         {post && (
           <div className="w-full mb-4">
             <img
-              src={bucketService.getFilePreview(post.featuredImage)}
+              src={bucketService.getImagePreview(post.featuredImage)}
               alt={post.title}
               className="rounded-lg"
             />
