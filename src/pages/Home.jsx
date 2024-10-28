@@ -8,7 +8,6 @@ const Home = () => {
   const status = useSelector((state) => state.auth.status);
 
   useEffect(() => {
-    // console.log(status);
     databaseService.getPosts([]).then((posts) => {
       if (posts) {
         setPosts(posts.documents);

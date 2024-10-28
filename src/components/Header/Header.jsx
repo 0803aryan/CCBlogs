@@ -8,7 +8,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
-    // console.log(path);
     navigate(path);
   };
 

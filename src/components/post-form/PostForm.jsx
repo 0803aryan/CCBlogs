@@ -18,10 +18,7 @@ const PostForm = ({ post }) => {
     });
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
-
   const submit = async (data) => {
-    console.log(data);
-    console.log(post);
     if (post) {
       const file = data.image[0]
         ? bucketService.uploadFile(data.image[0])
@@ -41,8 +38,6 @@ const PostForm = ({ post }) => {
       }
     } else {
       const file = await bucketService.uploadFile(data.image[0]);
-      console.log(file);
-      console.log(userData);
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
@@ -50,7 +45,6 @@ const PostForm = ({ post }) => {
           ...data,
           userId: userData.$id,
         });
-        console.log(dbPost);
         if (dbPost) {
           navigate(`/post/${dbPost.$id}`);
         }
